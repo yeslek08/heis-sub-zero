@@ -16,6 +16,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     let locationButton = UIButton(frame: CGRect(x: 150, y: 400, width: 75, height: 40))
     let velocityButton = UIButton(frame: CGRect(x: 150, y: 460, width: 75, height: 40))
     var locationMarker = GMSMarker()
+    @IBOutlet weak var clockTimerLabel: UILabel!
+    var count = 0
+
     @IBOutlet weak var speedLabel: UILabel!
     var latitude = 0.0
     var longitude = 0.0
@@ -49,6 +52,23 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         // Hide speed label at first
         speedLabel.hidden = true
         
+        // Shows clock timer
+        var timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("clockTimerAction"), userInfo: nil, repeats: true)
+    }
+    
+    func clockTimerAction(){
+        let minutes = count / 60
+        let seconds = count % 60
+        if (seconds == 0) {
+            clockTimerLabel.text = "\(minutes):00"
+        }
+        else if (seconds < 10) {
+            clockTimerLabel.text = "\(minutes):0\(seconds)"
+        }
+        else {
+            clockTimerLabel.text = "\(minutes):\(seconds)"
+        }
+        count+=1
     }
 
     func locationButtonAction(sender: UIButton!) {
@@ -76,7 +96,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         lastAccessedVelocity = false
 
         // Start the timer
-        minuteTimer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: #selector(timerAction), userInfo: nil, repeats: false)
+        minuteTimer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: #selector(pressedTimerAction), userInfo: nil, repeats: false)
         
     }
     func velocityButtonAction(sender: UIButton!) {
@@ -113,11 +133,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         lastAccessedVelocity = true
 
         // Start the timer
-        minuteTimer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: #selector(timerAction), userInfo: nil, repeats: false)
+        minuteTimer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: #selector(pressedTimerAction), userInfo: nil, repeats: false)
         
     }
     
-    func timerAction() {
+    func pressedTimerAction() {
         // Displays button again after timer reaches end of cycle
         self.view.addSubview(locationButton)
         self.view.addSubview(velocityButton)
