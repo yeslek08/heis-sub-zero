@@ -14,6 +14,7 @@
 		974A2B761D42CE65003B6D76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 974A2B751D42CE65003B6D76 /* Assets.xcassets */; };
 		974A2B791D42CE65003B6D76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 974A2B771D42CE65003B6D76 /* LaunchScreen.storyboard */; };
 		974A2B841D42CE66003B6D76 /* experimentationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974A2B831D42CE66003B6D76 /* experimentationTests.swift */; };
+		974DFBAA1D8B35D400733913 /* ViewControllerMC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974DFBA91D8B35D400733913 /* ViewControllerMC.swift */; };
 		97B7029F1D5AEADD00CEE6CB /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B7029E1D5AEADD00CEE6CB /* Map.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		974A2B7F1D42CE66003B6D76 /* experimentationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = experimentationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		974A2B831D42CE66003B6D76 /* experimentationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = experimentationTests.swift; sourceTree = "<group>"; };
 		974A2B851D42CE66003B6D76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		974DFBA91D8B35D400733913 /* ViewControllerMC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerMC.swift; sourceTree = "<group>"; };
 		97B7029E1D5AEADD00CEE6CB /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		C551FB449032DEF931DAFC82 /* libPods-experimentation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-experimentation.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -96,6 +98,7 @@
 			children = (
 				974A2B6E1D42CE65003B6D76 /* AppDelegate.swift */,
 				974A2B701D42CE65003B6D76 /* ViewController.swift */,
+				974DFBA91D8B35D400733913 /* ViewControllerMC.swift */,
 				97B7029E1D5AEADD00CEE6CB /* Map.swift */,
 				974A2B721D42CE65003B6D76 /* Main.storyboard */,
 				974A2B751D42CE65003B6D76 /* Assets.xcassets */,
@@ -176,9 +179,11 @@
 				TargetAttributes = {
 					974A2B6A1D42CE65003B6D76 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 					974A2B7E1D42CE66003B6D76 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 974A2B6A1D42CE65003B6D76;
 					};
 				};
@@ -275,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				974DFBAA1D8B35D400733913 /* ViewControllerMC.swift in Sources */,
 				974A2B711D42CE65003B6D76 /* ViewController.swift in Sources */,
 				97B7029F1D5AEADD00CEE6CB /* Map.swift in Sources */,
 				974A2B6F1D42CE65003B6D76 /* AppDelegate.swift in Sources */,
@@ -413,6 +419,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.experimentation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -425,6 +432,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.experimentation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -436,6 +444,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.experimentationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/experimentation.app/experimentation";
 			};
 			name = Debug;
@@ -448,6 +457,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.experimentationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/experimentation.app/experimentation";
 			};
 			name = Release;

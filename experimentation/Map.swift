@@ -11,14 +11,14 @@ import GoogleMaps
 
 class Map {
     
-    func makeMapView(latitudeVal: Double, longitudeVal: Double, zoomVal: Float) -> GMSMapView {
-        let camera = GMSCameraPosition.cameraWithLatitude(latitudeVal, longitude: longitudeVal, zoom: zoomVal)
-        let mapView = GMSMapView.mapWithFrame(CGRect.zero, camera: camera)
-        mapView.myLocationEnabled = true
+    func makeMapView(_ latitudeVal: Double, longitudeVal: Double, zoomVal: Float) -> GMSMapView {
+        let camera = GMSCameraPosition.camera(withLatitude: latitudeVal, longitude: longitudeVal, zoom: zoomVal)
+        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+        mapView.isMyLocationEnabled = true
         return mapView
     }
     
-    func makeMarker(latitudeVal: Double, longitudeVal: Double, titleVal: String, snippetVal: String, myMapView: GMSMapView)
+    func makeMarker(_ latitudeVal: Double, longitudeVal: Double, titleVal: String, snippetVal: String, myMapView: GMSMapView)
         -> GMSMarker {
         // Creates a marker in the center of the map.
         let marker = GMSMarker()
